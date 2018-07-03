@@ -1,0 +1,68 @@
+<p>
+  add-employee works!
+</p>
+
+
+<p>
+  employee-details works!
+</p>
+
+<form #form="ngForm"  (ngSubmit)="onSubmit(empForm)" novalidate >
+
+		<!--	<input type="text" name="firstname" [(ngModel)]="employeeData.id"   />-->
+      <input id="id" name="id" type="hidden" value="" [(ngModel)]="employeeData.id">
+			<br/><br/>
+			First Name:<br/>
+			<input type="text" name="firstname" [(ngModel)]="employeeData.firstName"   />
+			<br/><br/>
+      Last name:<br/>
+			<input type="text" name="lastname" [(ngModel)]="employeeData.lastName"   />
+			<br/><br/>
+		Email:<br/>
+			<input type="email" name="email"  [(ngModel)]="employeeData.email"   />
+			<br/><br/>
+			Contact Number:<br/>
+			<input type="text" name="contact" [(ngModel)]="employeeData.contactNumber" />
+			<br/><br/>
+			Address:<br/>
+			<textarea name="Address" rows="2" cols="20" [(ngModel)]="employeeData.address"   ></textarea>
+			<br/><br/>
+			Username:<br/>
+			<input type="text" name="username" [(ngModel)]="employeeData.userName"    />
+			<br/><br/>
+			Password:<br/>
+			<input type="password" name="password" [(ngModel)]="employeeData.password"    />
+			<br/><br/>
+			Gender<br/>
+			<input type="radio" name="gender"  value="male" [(ngModel)]="employeeData.gender" > Male<br/>
+			<input type="radio" name="gender" value="female" [(ngModel)]="employeeData.gender" checked> Female<br/>
+			<br/><br/>
+		Qualification:<br/>
+
+			<select name="qualification" [(ngModel)]="employeeData.qualification" >
+  
+        <option *ngFor="let qualification of qualificationList">{{qualification}}</option>
+       </select>
+<br/><br/>
+
+      Experiance:<br/>
+			<select  name="expreriance" [(ngModel)]="employeeData.experiance" ngModel >
+			  <option *ngFor="let year of experiance"  >
+        {{year}}
+        </option>
+			</select>
+			<br/><br/>
+         
+      <div class="form-control" *ngFor="let language of languageObj">
+       <input   type="checkbox" id="{{language.languageName}}" name="{{language.languageName}}" value="{{language.languageName}}" (change)= "change(language.languageName)" checked="false" ngModel > 
+       {{language.languageName}}
+      </div>
+      <br/><br/>
+
+         
+			 <input type="submit" value="Submit" ><br/>
+		</form>
+
+ Model : {{model | json}}
+    <br/>
+    Angular: {{form.value | json}}

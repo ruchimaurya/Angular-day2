@@ -1,0 +1,26 @@
+ [ {
+      "id": 111,
+      "firstName": "Ruchi",
+      "lastName": "Maurya",
+      "email": "rm@gets.com",
+      "contactNumber": 98678,
+      "address": "hbsgbn",
+      "gender": "frmale",
+      "qualification": "string",
+      "experiance": "tgbstr"
+
+    },
+    {
+      "id": 111,
+      "firstName": "Ruchi",
+      "lastName": "Maurya",
+      "email": "rm@gets.com",
+      "contactNumber": 98678,
+      "address": "hbsgbn",
+      "gender": "frmale",
+      "qualification": "string",
+      "experiance": "tgbstr"
+
+    }
+
+ ]

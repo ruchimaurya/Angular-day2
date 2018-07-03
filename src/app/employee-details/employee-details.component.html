@@ -1,0 +1,64 @@
+
+
+<p>
+  employee-details works!
+</p>
+
+<form #form="ngForm"  (ngSubmit)="onSubmit(empForm)" novalidate >
+
+		<!--	<input type="text" name="firstname" [(ngModel)]="employeedetail[0].id"   />-->
+			<br/><br/>
+			First Name:<br/>
+			<input type="text" name="firstname" [(ngModel)]="employeedetail[0].firstName"   />
+			<br/><br/>
+      Last name:<br/>
+			<input type="text" name="lastname" [(ngModel)]="employeedetail[0].lastName"   />
+			<br/><br/>
+		Email:<br/>
+			<input type="email" name="email"  [(ngModel)]="employeedetail[0].email"   />
+			<br/><br/>
+			Contact Number:<br/>
+			<input type="text" name="contact" [(ngModel)]="employeedetail[0].contactNumber" />
+			<br/><br/>
+			Address:<br/>
+			<textarea name="Address" rows="2" cols="20" [(ngModel)]="employeedetail[0].address"   ></textarea>
+			<br/><br/>
+			Username:<br/>
+			<input type="text" name="username" [(ngModel)]="employeedetail[0].userName"    />
+			<br/><br/>
+			Password:<br/>
+			<input type="password" name="password" [(ngModel)]="employeedetail[0].password"    />
+			<br/><br/>
+			Gender<br/>
+			<input type="radio" name="gender"  value="male" [(ngModel)]="employeedetail[0].gender" > Male<br/>
+			<input type="radio" name="gender" value="female" [(ngModel)]="employeedetail[0].gender" checked> Female<br/>
+			<br/><br/>
+		Qualification:<br/>
+
+			<select name="qualification" [(ngModel)]="employeedetail[0].qualification" >
+				 <option *ngFor="let qualification of qualificationList">{{qualification}}</option>
+	    </select>
+<br/><br/>
+
+      Experiance:<br/>
+			<select  name="expreriance" [(ngModel)]="employeedetail[0].experiance" >
+			  <option *ngFor="let year of experiance"  >
+        {{year}}
+        </option>
+			</select>
+			<br/><br/>
+         
+      <div class="form-control" *ngFor="let language of languageObj">
+       <input   type="checkbox" id="{{language.languageName}}" name="{{language.languageName}}" value="{{language.languageName}}" (change)= "change(language.languageName)" ngModel> 
+       {{language.languageName}}
+      </div>
+      <br/><br/>
+
+         
+			 <input type="submit" value="Save Changes" ><br><br>
+			 <input type="button" value="Cancel" (cancel)="backToList()" ><br/>
+		</form>
+
+ Model : {{model | json}}
+    <br/>
+    Angular: {{form.value | json}}
